@@ -1,0 +1,108 @@
+{
+  "data": {
+    "nodes": [
+      {
+        "name": "Rexona Men Antitranspirante Roll On Invisible 50ml",
+        "shortDescription": "Decile chau a las manchas blancas con Rexona Invisible.",
+        "id": "-ed429aa9-e815-5d1b-966d-403fc8177fac",
+        "images": [
+          {
+            "alt": "Envase de desodorante Rexona Men Antitranspirante Roll On Invisible 50ml",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/2d63d02809567b152afc3d57b091797f3b62c05c-5000x5000.tif?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "88c47f2a01531fb5e5b25963d54e433becafd55ae72157e86256bf29",
+          "name": "Roll On"
+        }
+      },
+      {
+        "name": "Rexona Alcohol en Gel Sin Perfume 300ml",
+        "shortDescription": "¡Tus manos protegidas en todo momento, donde sea que estés! Vos disfrutá tu día que Rexona se encarga de los gérmenes",
+        "id": "-3bef0102-683f-5004-a790-6d2db418a633",
+        "images": [
+          {
+            "alt": "Envase de Alcohol en Gel Rexona Sin Perfume 300ml",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/b06f20ce0d5495bb830efc92774922499d2a44d7-5000x5000.tif?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "4ddf279fad495146ed00ea00927f476210b08c2bc07bc2a88163fa1a",
+          "name": "Alcohol en Gel"
+        }
+      },
+      {
+        "name": "Rexona Men Antitranspirante Roll On V8 50ml",
+        "shortDescription": "Rexona v8, pensado para los fanáticos de los autos.",
+        "id": "-e3ba92a3-cfdd-5ffb-86f1-df547e3d96c0",
+        "images": [
+          {
+            "alt": "Envase de desodorante Rexona Men Antitranspirante Roll On V8 50ml",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/84cb5b7c83903b09b74d63ff4f30e648f1a0415c-3000x3000.tif?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "88c47f2a01531fb5e5b25963d54e433becafd55ae72157e86256bf29",
+          "name": "Roll On"
+        }
+      },
+      {
+        "name": "Rexona Jabón Antibacterial Original 90gr",
+        "shortDescription": "Elimina el 99,9% de las bacterias y tienen 10 veces más protección antibacterial. Con ingredientes que brindan beneficios una limpieza profunda y una frescura energizante.",
+        "id": "-a7a6cafb-1afc-593c-a239-60aa95cafc26",
+        "images": [
+          {
+            "alt": "Envase de Jabón Antibacterial Rexona Original 90 gramos",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/14231b4eef6b0ca5926c93376412e0afb716184a-5000x5000.png?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "67ce1f0eb28f56ed8a004be1d1443b02c66e987066cd73f21aa14681",
+          "name": "Jabón Barra"
+        }
+      },
+      {
+        "name": "Rexona Women Antitranspirante Roll On Invisible",
+        "shortDescription": "Decile chau a las manchas blancas con Rexona Invisible.",
+        "id": "-207d9259-279e-516e-aa46-48f1054d0a1e",
+        "images": [
+          {
+            "alt": "Envase de desodorante Rexona Women Antitranspirante Roll On Invisible 50ml",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/4b27bbcd4dfd6b14e51d85c108ad4e4471204f5f-5000x5000.tif?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "88c47f2a01531fb5e5b25963d54e433becafd55ae72157e86256bf29",
+          "name": "Roll On"
+        }
+      },
+      {
+        "name": "Rexona Women Desodorante en Aerosol Active Emotion",
+        "shortDescription": "72 hs de protección, de la mano de Rexona.",
+        "id": "-61895099-bb4f-53e3-a2b2-55219cbad396",
+        "images": [
+          {
+            "alt": "Envase de Antitranspirante Aerosol Rexona Women Active Emotion 150ml",
+            "asset": {
+              "url": "https://cdn.sanity.io/images/27438tds/rexona-staging-ar/6113c914ff29c371cedb6b006aadc2082c25930c-5000x5000.tif?w=386&h=386&q=80&auto=format"
+            }
+          }
+        ],
+        "category": {
+          "_id": "bbf9aaa9b8d897480f9e0ade81c087843bf18590fa053eca43e6966e",
+          "name": "Aerosol"
+        }
+      }
+    ]
+  }
+}
