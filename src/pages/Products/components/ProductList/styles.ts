@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 
 export const SearchFormContainer = styled.form`
   display: flex;
@@ -25,7 +25,8 @@ export const SearchFormContainer = styled.form`
   button {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
     border: 0;
     padding: 1rem;
     background: transparent;
@@ -33,14 +34,29 @@ export const SearchFormContainer = styled.form`
     color: ${({ theme }) => theme["gray-500"]};
     font-weight: bold;
     border-radius: 6px;
+    cursor: pointer;
 
     &:hover {
       background: ${({ theme }) => theme["blue-500"]};
-      border: 1px solid ${({ theme }) => theme["blue-500"]};
       color: ${({ theme }) => theme["white-text"]};
       transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     }
   }
+`;
+export const SearchTitleTextContainer = styled.div`
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-top: 1.75rem;
+
+  span {
+    color: ${({ theme }) => theme["blue-500"]};
+  }
+`;
+
+export const SearchTitleText = styled.h3`
+  color: ${({ theme }) => theme["gray-500"]};
+  font-size: 1.6rem;
 `;
 
 export const ProductListContainer = styled.div`
@@ -88,6 +104,18 @@ export const ProductItemsBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-bottom: 2rem;
+
+  &.fade-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  &.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 `;
 
 export const ProductItem = styled.div`
@@ -97,9 +125,39 @@ export const ProductItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: box-shadow 0.3s;
+  }
 `;
 
 export const ProductItemName = styled.div`
   color: ${({ theme }) => theme["gray-500"]};
   text-align: center;
+  padding: 1rem 0.75rem;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  svg {
+    animation: spin 1s linear infinite; /* Adiciona a animação de rotação */
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  p {
+    font-size: 1.35rem;
+  }
 `;

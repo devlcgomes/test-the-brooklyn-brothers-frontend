@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
+import { Transition, TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
+
 import axios from "axios";
 import {
   FilterProductcontainer,
+  LoadingContainer,
   ProductItem,
   ProductItemImg,
   ProductItemName,
@@ -9,7 +13,10 @@ import {
   ProductListContainer,
   ProductListContent,
   SearchFormContainer,
+  SearchTitleText,
+  SearchTitleTextContainer,
 } from "./styles";
+import { CircleNotch, MagnifyingGlass } from "phosphor-react";
 
 interface Product {
   id: string;
@@ -32,23 +39,33 @@ export function ProductList() {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isProductItemsBoxVisible, setIsProductItemsBoxVisible] =
+    useState(false);
 
   useEffect(() => {
-    axios
-      .get("/productsCategory.json")
-      .then((response) => {
-        const productNodes: Product[] = response.data.data.nodes;
-        setProducts(productNodes);
+    setIsLoading(true);
 
-        // Extrair categorias únicas dos produtos
-        const uniqueCategories = [
-          ...new Set(productNodes.map((product) => product.category.name)),
-        ];
-        setCategories(uniqueCategories);
-      })
-      .catch((error) => {
-        console.log("Erro ao carregar os produtos:", error);
-      });
+    setTimeout(() => {
+      axios
+        .get("/productsCategory.json")
+        .then((response) => {
+          const productNodes: Product[] = response.data.data.nodes;
+          setProducts(productNodes);
+
+          // Extrair categorias únicas dos produtos
+          const uniqueCategories = [
+            ...new Set(productNodes.map((product) => product.category.name)),
+          ];
+          setCategories(uniqueCategories);
+          setIsLoading(false);
+          setIsProductItemsBoxVisible(true); // Define como true após o atraso
+        })
+        .catch((error) => {
+          console.log("Erro ao carregar os produtos:", error);
+          setIsLoading(false);
+        });
+    }, 2000); // Atraso de 2 segundos antes de definir isLoading como false
   }, []);
 
   const handleCategoryFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,6 +82,11 @@ export function ProductList() {
 
   const isCategorySelected = (category: string) => {
     return selectedCategories.includes(category);
+  };
+
+  const countProductsByCategory = (categoryName: string) => {
+    return products.filter((product) => product.category.name === categoryName)
+      .length;
   };
 
   const handleSearch = () => {
@@ -99,9 +121,15 @@ export function ProductList() {
         />
 
         <button type="button" onClick={handleSearch}>
+          <MagnifyingGlass size={20} />
           Buscar
         </button>
       </SearchFormContainer>
+      <SearchTitleTextContainer>
+        <SearchTitleText>
+          O que você <span>está procurando?</span>
+        </SearchTitleText>
+      </SearchTitleTextContainer>
 
       <ProductListContainer>
         <FilterProductcontainer>
@@ -114,27 +142,48 @@ export function ProductList() {
                 onChange={handleCategoryFilter}
                 checked={isCategorySelected(category)}
               />
-              {category}
+              {category} ({countProductsByCategory(category)})
             </label>
           ))}
         </FilterProductcontainer>
 
         <ProductListContent>
-          <h3>{`Total de produtos: ${filteredProducts.length}`}</h3>
-          {filteredProducts.length === 0 ? (
-            <p>Nenhum produto encontrado</p>
+          {isLoading ? (
+            // Mostrar o componente de carregamento enquanto isLoading é true
+            <LoadingContainer>
+              <CircleNotch size={50} color={"#166290"} />
+              <p>Carregando produtos...</p>
+            </LoadingContainer>
           ) : (
-            <ProductItemsBox>
-              {filteredProducts.map((product) => (
-                <ProductItem key={product.id}>
-                  <ProductItemImg
-                    src={product.images[0].asset.url}
-                    alt={product.images[0].alt}
-                  />
-                  <ProductItemName>{product.name}</ProductItemName>
-                </ProductItem>
-              ))}
-            </ProductItemsBox>
+            // Renderizar a lista de produtos quando isLoading é false
+            <>
+              <h3>{`Total de produtos: ${filteredProducts.length}`}</h3>
+              {filteredProducts.length === 0 ? (
+                <p>Nenhum produto encontrado</p>
+              ) : (
+                // Use o TransitionGroup e CSSTransition para aplicar a animação
+                <TransitionGroup>
+                  <CSSTransition
+                    in={!isLoading}
+                    timeout={500}
+                    classNames="fade"
+                    unmountOnExit
+                  >
+                    <ProductItemsBox>
+                      {filteredProducts.map((product) => (
+                        <ProductItem key={product.id}>
+                          <ProductItemImg
+                            src={product.images[0].asset.url}
+                            alt={product.images[0].alt}
+                          />
+                          <ProductItemName>{product.name}</ProductItemName>
+                        </ProductItem>
+                      ))}
+                    </ProductItemsBox>
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            </>
           )}
         </ProductListContent>
       </ProductListContainer>

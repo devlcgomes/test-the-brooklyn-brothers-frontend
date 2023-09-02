@@ -1,3 +1,4 @@
+import { ShoppingBag, ShoppingCart } from "phosphor-react";
 import {
   HeaderContainer,
   HeaderContent,
@@ -9,7 +10,10 @@ export function Header() {
     <HeaderContainer>
       <HeaderContent>
         <h1>TBB Store - Luciano Gomes</h1>
-        <ViewAllProductsButton>Todos os Produtos</ViewAllProductsButton>
+        <ViewAllProductsButton>
+          <ShoppingCart size={20} />
+          Meu carrinho
+        </ViewAllProductsButton>
       </HeaderContent>
     </HeaderContainer>
   );
