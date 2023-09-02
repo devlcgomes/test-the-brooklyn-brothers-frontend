@@ -17,6 +17,7 @@ import {
   SearchTitleTextContainer,
 } from "./styles";
 import { CircleNotch, MagnifyingGlass } from "phosphor-react";
+import { ScrollTopButton } from "../../../../components/ScrollTopButton";
 
 interface Product {
   id: string;
@@ -187,6 +188,7 @@ export function ProductList() {
           )}
         </ProductListContent>
       </ProductListContainer>
+      <ScrollTopButton />
     </>
   );
 }
