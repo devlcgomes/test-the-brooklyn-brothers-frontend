@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const SearchFormContainer = styled.form`
-  border: 2px solid red;
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
@@ -50,29 +49,57 @@ export const ProductListContainer = styled.div`
   margin: 0 auto;
   margin-top: 2rem;
   padding: 0 1.5rem;
+  padding-top: 1rem;
   display: flex;
-  justify-content: space-between;
 `;
 
 export const FilterProductcontainer = styled.div`
-  flex: 500px;
-`;
-
-export const ProductItem = styled.div`
-  border: 1px solid ${({ theme }) => theme["gray-200"]};
-  width: 15rem;
-  height: auto;
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
+  width: 200px;
+
+  input {
+    margin-right: 0.5rem;
+  }
+
+  input:checked {
+    background: ${({ theme }) => theme["blue-500"]};
+  }
 `;
 
 export const ProductListContent = styled.div`
-  width: 100%;
   display: flex;
   gap: 1rem;
   flex: 1;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: column;
+`;
+
+export const ProductItemImg = styled.img`
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+`;
+
+export const ProductItemsBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
+
+export const ProductItem = styled.div`
+  border: 2px solid ${({ theme }) => theme["gray-200"]};
+  border-radius: 10px;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const ProductItemName = styled.div`
+  color: ${({ theme }) => theme["gray-500"]};
+  text-align: center;
 `;

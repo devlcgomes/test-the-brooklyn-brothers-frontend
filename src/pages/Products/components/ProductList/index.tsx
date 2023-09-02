@@ -3,6 +3,9 @@ import axios from "axios";
 import {
   FilterProductcontainer,
   ProductItem,
+  ProductItemImg,
+  ProductItemName,
+  ProductItemsBox,
   ProductListContainer,
   ProductListContent,
   SearchFormContainer,
@@ -100,10 +103,8 @@ export function ProductList() {
         </button>
       </SearchFormContainer>
 
-      <ProductListContainer
-        style={{ border: "3px solid black", display: "flex" }}
-      >
-        <FilterProductcontainer style={{ border: "1px solid yellow" }}>
+      <ProductListContainer>
+        <FilterProductcontainer>
           <p>Filtrar por categoria:</p>
           {categories.map((category) => (
             <label key={category}>
@@ -117,26 +118,25 @@ export function ProductList() {
             </label>
           ))}
         </FilterProductcontainer>
-        <div style={{ border: "1px solid green" }}>
-          <ProductListContent>
-            <h3>{`Total de produtos: ${filteredProducts.length}`}</h3>
-            {filteredProducts.length === 0 ? (
-              <p>Nenhum produto encontrado</p>
-            ) : (
-              <ProductItem>
-                {filteredProducts.map((product) => (
-                  <li key={product.id}>
-                    <img
-                      src={product.images[0].asset.url}
-                      alt={product.images[0].alt}
-                    />
-                    {product.name}
-                  </li>
-                ))}
-              </ProductItem>
-            )}
-          </ProductListContent>
-        </div>
+
+        <ProductListContent>
+          <h3>{`Total de produtos: ${filteredProducts.length}`}</h3>
+          {filteredProducts.length === 0 ? (
+            <p>Nenhum produto encontrado</p>
+          ) : (
+            <ProductItemsBox>
+              {filteredProducts.map((product) => (
+                <ProductItem key={product.id}>
+                  <ProductItemImg
+                    src={product.images[0].asset.url}
+                    alt={product.images[0].alt}
+                  />
+                  <ProductItemName>{product.name}</ProductItemName>
+                </ProductItem>
+              ))}
+            </ProductItemsBox>
+          )}
+        </ProductListContent>
       </ProductListContainer>
     </>
   );
