@@ -65,7 +65,7 @@ export function ProductList() {
           console.log("Erro ao carregar os produtos:", error);
           setIsLoading(false);
         });
-    }, 2000); // Atraso de 2 segundos antes de definir isLoading como false
+    }, 1000); // Atraso de 2 segundos antes de definir isLoading como false
   }, []);
 
   const handleCategoryFilter = (event: React.ChangeEvent<HTMLInputElement>) => {

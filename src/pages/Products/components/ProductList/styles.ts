@@ -9,6 +9,19 @@ export const SearchFormContainer = styled.form`
   margin: 0 auto;
   margin-top: 2rem;
 
+  @media (max-width: 450px) {
+    padding: 0 1rem;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 760px) and (max-width: 1120px) {
+    padding: 0 2rem;
+  }
+
   input {
     border-radius: 6px;
     border: 0;
@@ -52,11 +65,32 @@ export const SearchTitleTextContainer = styled.div`
   span {
     color: ${({ theme }) => theme["blue-500"]};
   }
+
+  @media (max-width: 450px) {
+    text-align: center;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+    padding-left: 2rem;
+  }
+
+  @media (min-width: 760px) and (max-width: 1120px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const SearchTitleText = styled.h3`
   color: ${({ theme }) => theme["gray-500"]};
   font-size: 1.6rem;
+
+  @media (max-width: 450px) {
+    font-size: 1.4 rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+  }
+  @media (min-width: 760px) and (max-width: 1120px) {
+  }
 `;
 
 export const ProductListContainer = styled.div`
@@ -67,6 +101,14 @@ export const ProductListContainer = styled.div`
   padding: 0 1.5rem;
   padding-top: 1rem;
   display: flex;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+  }
 `;
 
 export const FilterProductcontainer = styled.div`
@@ -82,6 +124,10 @@ export const FilterProductcontainer = styled.div`
   input:checked {
     background: ${({ theme }) => theme["blue-500"]};
   }
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `;
 
 export const ProductListContent = styled.div`
@@ -91,6 +137,15 @@ export const ProductListContent = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+  }
 `;
 
 export const ProductItemImg = styled.img`
@@ -116,6 +171,11 @@ export const ProductItemsBox = styled.div`
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
+
+  @media (max-width: 450px) {
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 export const ProductItem = styled.div`
@@ -129,6 +189,14 @@ export const ProductItem = styled.div`
   &:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: box-shadow 0.3s;
+  }
+
+  @media (max-width: 450px) {
+    margin: 0 auto;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+    width: 40%;
   }
 `;
 

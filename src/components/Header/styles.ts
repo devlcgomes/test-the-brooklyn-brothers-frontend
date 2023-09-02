@@ -14,6 +14,21 @@ export const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 450px) and (max-width: 760px) {
+    padding: 0 2rem;
+  }
+
+  @media (min-width: 760px) and (max-width: 1120px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const ViewAllProductsButton = styled.button`
@@ -29,6 +44,10 @@ export const ViewAllProductsButton = styled.button`
   align-items: center;
   flex-direction: row-reverse;
   gap: 0.5rem;
+
+  @media (max-width: 450px) {
+    height: 40px;
+  }
 
   &:hover {
     background-color: ${(props) => props.theme["gray-200"]};
