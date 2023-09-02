@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const SearchFormContainer = styled.form`
+  border: 2px solid red;
   display: flex;
+  justify-content: flex-end;
   gap: 1rem;
   width: 100%;
   max-width: 1120px;
@@ -9,9 +11,9 @@ export const SearchFormContainer = styled.form`
   margin-top: 2rem;
 
   input {
-    flex: 1;
     border-radius: 6px;
     border: 0;
+    flex: 1;
     background-color: ${({ theme }) => theme["gray-300"]};
     color: ${({ theme }) => theme["gray-500"]};
     padding: 1rem;
@@ -56,22 +58,6 @@ export const FilterProductcontainer = styled.div`
   flex: 500px;
 `;
 
-export const ProductListHeader = styled.div`
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  padding-left: 1.75rem;
-`;
-
-export const ProductListContent = styled.div`
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-  flex: 1;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
 export const ProductItem = styled.div`
   border: 1px solid ${({ theme }) => theme["gray-200"]};
   width: 15rem;
@@ -82,14 +68,11 @@ export const ProductItem = styled.div`
   align-items: center;
 `;
 
-export const ProductItemImage = styled.img`
+export const ProductListContent = styled.div`
   width: 100%;
-`;
-
-export const ProductItemInfo = styled.div`
-  text-align: center;
   display: flex;
-  align-items: center;
+  gap: 1rem;
+  flex: 1;
   justify-content: center;
-  padding: 0.75rem 0.5rem;
+  flex-wrap: wrap;
 `;
