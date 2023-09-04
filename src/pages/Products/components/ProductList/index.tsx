@@ -56,19 +56,18 @@ export function ProductList() {
           const productNodes: Product[] = response.data.data.nodes;
           setProducts(productNodes);
 
-          // Extrair categorias únicas dos produtos
           const uniqueCategories = [
             ...new Set(productNodes.map((product) => product.category.name)),
           ];
           setCategories(uniqueCategories);
           setIsLoading(false);
-          setIsProductItemsBoxVisible(true); // Define como true após o atraso
+          setIsProductItemsBoxVisible(true);
         })
         .catch((error) => {
           console.log("Erro ao carregar os produtos:", error);
           setIsLoading(false);
         });
-    }, 1000); // Atraso de 2 segundos antes de definir isLoading como false
+    }, 2000);
   }, []);
 
   const handleCategoryFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -93,7 +92,6 @@ export function ProductList() {
   };
 
   const handleSearch = () => {
-    // Faz a busca apenas quando o botão "Buscar" é clicado
     updateFilteredProducts();
   };
 
@@ -109,7 +107,6 @@ export function ProductList() {
   };
 
   useEffect(() => {
-    // Faz a primeira filtragem quando a página é carregada
     updateFilteredProducts();
   }, [selectedCategories, products]);
 
@@ -152,19 +149,16 @@ export function ProductList() {
 
         <ProductListContent>
           {isLoading ? (
-            // Mostrar o componente de carregamento enquanto isLoading é true
             <LoadingContainer>
               <CircleNotch size={50} color={"#166290"} />
               <p>Carregando produtos...</p>
             </LoadingContainer>
           ) : (
-            // Renderizar a lista de produtos quando isLoading é false
             <>
               <h3>{`Total de produtos: ${filteredProducts.length}`}</h3>
               {filteredProducts.length === 0 ? (
                 <p>Nenhum produto encontrado</p>
               ) : (
-                // Use o TransitionGroup e CSSTransition para aplicar a animação
                 <TransitionGroup>
                   <CSSTransition
                     in={!isLoading}

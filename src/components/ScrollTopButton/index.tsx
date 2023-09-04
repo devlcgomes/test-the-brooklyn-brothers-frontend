@@ -6,7 +6,6 @@ export function ScrollTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Adicione um evento de rolagem para mostrar ou ocultar o botão
     const handleScroll = () => {
       if (window.scrollY > 200) {
         setIsVisible(true);
@@ -18,7 +17,6 @@ export function ScrollTopButton() {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Limpe o evento de rolagem ao desmontar o componente
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);

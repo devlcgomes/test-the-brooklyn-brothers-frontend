@@ -9,7 +9,7 @@ export const SearchFormContainer = styled.form`
   margin: 0 auto;
   margin-top: 2rem;
 
-  @media (max-width: 450px) {
+  @media (min-width: 450px) and (max-width: 450px) {
     padding: 0 1rem;
     font-size: 0.75rem;
   }
