@@ -10,7 +10,6 @@ export const SearchFormContainer = styled.form`
   margin-top: 2rem;
 
   @media (max-width: 390px) {
-    border: 2px solid green;
     display: flex;
     flex-direction: column;
     align-items: center;
