@@ -33,7 +33,7 @@ A funcionalidade de pesquisa só é ativada com o clique no botão de Search, vi
 
 ## Iniciando
 
-<h1 align="center"><img align="center" src="[./github_assets/frontend_home.png](https://raw.githubusercontent.com/devlcgomes/test-the-brooklyn-brothers-frontend/main/src/assets/homepage.png)" alt="Homepage TBB Store" width="700"></img></h1>
+<h1 align="center"><img align="center" src="https://raw.githubusercontent.com/devlcgomes/test-the-brooklyn-brothers-frontend/main/src/assets/homepage.png" alt="Homepage TBB Store" width="700"></img></h1>
 
 ### Instalação - Frontend (WEB)
 
