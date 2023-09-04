@@ -31,7 +31,7 @@ TBB Store é uma aplicação onde o usuário pode pesquisar por itens, filtrar p
 
 A funcionalidade de pesquisa só é ativada com o clique no botão de Search, visto que a implementação de aparecer o item pesquisado enquanto o usuario digita foi implementada porém não utilizada, visando usuários com dispositivos inferiores que podem apresentar travamentos.
 
-## Iniciando
+## Pré-Visualização
 
 <h1 align="center"><img align="center" src="https://raw.githubusercontent.com/devlcgomes/test-the-brooklyn-brothers-frontend/main/src/assets/homepage.png" alt="Homepage TBB Store" width="700"></img></h1>
 
