@@ -1,4 +1,4 @@
-import { ShoppingBag, ShoppingCart } from "phosphor-react";
+import { ShoppingCart } from "phosphor-react";
 import {
   HeaderContainer,
   HeaderContent,

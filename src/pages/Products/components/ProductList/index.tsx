@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Transition, TransitionGroup } from "react-transition-group";
+import { TransitionGroup } from "react-transition-group";
 import { CSSTransition } from "react-transition-group";
 
 import axios from "axios";
@@ -43,6 +43,8 @@ export function ProductList() {
   const [isLoading, setIsLoading] = useState(true);
   const [isProductItemsBoxVisible, setIsProductItemsBoxVisible] =
     useState(false);
+
+  console.log(isProductItemsBoxVisible);
 
   useEffect(() => {
     setIsLoading(true);
