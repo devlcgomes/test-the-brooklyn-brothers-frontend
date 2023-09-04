@@ -41,7 +41,6 @@ export const SearchFormContainer = styled.form`
     }
 
     @media (max-width: 390px) {
-      border: 2px solid green;
       width: 20rem;
     }
   }
@@ -152,7 +151,6 @@ export const ProductListContent = styled.div`
     width: 100%;
     display: flex;
     gap: 0.4rem;
-    border: 2px solid green;
   }
 
   @media (min-width: 450px) and (max-width: 760px) {
@@ -204,7 +202,6 @@ export const ProductItem = styled.div`
 
   @media (max-width: 440px) {
     margin: 0 auto;
-    border: 2px solid green;
     width: 40%;
   }
 
