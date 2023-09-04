@@ -9,7 +9,14 @@ export const SearchFormContainer = styled.form`
   margin: 0 auto;
   margin-top: 2rem;
 
-  @media (min-width: 450px) and (max-width: 450px) {
+  @media (max-width: 390px) {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 450px) {
     padding: 0 1rem;
     font-size: 0.75rem;
   }
@@ -33,6 +40,11 @@ export const SearchFormContainer = styled.form`
     &::placeholder {
       color: ${({ theme }) => theme["gray-500"]};
     }
+
+    @media (max-width: 390px) {
+      border: 2px solid green;
+      width: 20rem;
+    }
   }
 
   button {
@@ -53,6 +65,10 @@ export const SearchFormContainer = styled.form`
       background: ${({ theme }) => theme["blue-500"]};
       color: ${({ theme }) => theme["white-text"]};
       transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    @media (max-width: 390px) {
+      width: 8rem;
     }
   }
 `;
@@ -85,11 +101,6 @@ export const SearchTitleText = styled.h3`
 
   @media (max-width: 450px) {
     font-size: 1.4 rem;
-  }
-
-  @media (min-width: 450px) and (max-width: 760px) {
-  }
-  @media (min-width: 760px) and (max-width: 1120px) {
   }
 `;
 
@@ -142,6 +153,7 @@ export const ProductListContent = styled.div`
     width: 100%;
     display: flex;
     gap: 0.4rem;
+    border: 2px solid green;
   }
 
   @media (min-width: 450px) and (max-width: 760px) {
@@ -191,8 +203,10 @@ export const ProductItem = styled.div`
     transition: box-shadow 0.3s;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 440px) {
     margin: 0 auto;
+    border: 2px solid green;
+    width: 40%;
   }
 
   @media (min-width: 450px) and (max-width: 760px) {
