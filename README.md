@@ -31,6 +31,10 @@ TBB Store é uma aplicação onde o usuário pode pesquisar por itens, filtrar p
 
 A funcionalidade de pesquisa só é ativada com o clique no botão de Search, visto que a implementação de aparecer o item pesquisado enquanto o usuario digita foi implementada porém não utilizada, visando usuários com dispositivos inferiores que podem apresentar travamentos.
 
+## Live Preview
+
+- [TBB-LivePreview](https://test-the-brooklyn-brothers-frontend.vercel.app/)
+
 ## Pré-Visualização
 
 <h1 align="center"><img align="center" src="https://raw.githubusercontent.com/devlcgomes/test-the-brooklyn-brothers-frontend/main/src/assets/homepage.png" alt="Homepage TBB Store" width="700"></img></h1>
@@ -40,13 +44,12 @@ A funcionalidade de pesquisa só é ativada com o clique no botão de Search, vi
 Para iniciar o **Frontend** do React utilize os comandos:
 
 ```bash
-cd aulas
-cd frontend
+cd test-the-brooklyn-brothers-frontend-main
 npm install
-npm start
+npm run dev
 ```
 
-Assim que o processo terminar, automaticamente será aberta no seu navegador a página `localhost:3000` contendo o Projeto desenvolvido.
+Assim que o processo terminar, automaticamente será disponibilizado o link no terminal para acesso ao projeto.
 
 ---
 
